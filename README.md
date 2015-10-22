@@ -1,5 +1,6 @@
 # S2CX
 S2CX is an approach to use SQL/XML queries to directly generate compressed XML from relational databases. The naïve approach would be to execute the SQL/XML query and compress the result. Our approach on the other hand extracts the XML structure from the SQL/XML query, creates an SQL query which retrieves the same data and generates events to create compressed XML or to just process the XML result (similar to SAX events). In this repository, we publish the code for the event generation. The event handlers for creating the compressed XML are not included in this repository, and we do not intend to publish code for this part of the project. However, the way the event handlers work is described in our publications. For more information on the approach, please have a look at our publications.
+
 Please be aware that this is a prototypic implementation that comes with absolutely no warranty. We have successfully used the library with Oracle XE, DB2, and SQL Server. Our approach should basically work with any SQL-based database system. However, we know that this library does not work with all SQL-based databases systems because even though SQL is standardized, there are some differences in the SQL support (see Limitations and Assumptions).
 
 ## Getting started
