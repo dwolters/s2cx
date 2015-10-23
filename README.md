@@ -1,5 +1,5 @@
 # S2CX
-S2CX is an approach to use SQL/XML queries to directly generate compressed XML from relational databases. The naïve approach would be to execute the SQL/XML query and compress the result. Our approach on the other hand extracts the XML structure from the SQL/XML query, creates an SQL query which retrieves the same data and generates events to create compressed XML or to just process the XML result (similar to SAX events). In this repository, we publish the code for the event generation. The event handlers for creating the compressed XML are not included in this repository, and we do not intend to publish code for this part of the project. However, the way the event handlers work is described in our publications. For more information on the approach, please have a look at our publications.
+S2CX is an approach to use SQL/XML queries to directly generate compressed XML from relational databases. The naïve approach would be to execute the SQL/XML query and compress the result. Our approach on the other hand extracts the XML structure from the SQL/XML query, creates an SQL query which retrieves the same data and generates events to create compressed XML or to just process the XML result (similar to SAX events). In this repository, we publish the code for the event generation. The event handlers for creating the compressed XML are not included in this repository, and we do not intend to publish code for this part of the project. However, the way the event handlers work is described in our publications. The S2CX approach has been developed at the research group for [Electronic Commerce and Databases](http://www-old.cs.uni-paderborn.de/en/research-group/ag-boettcher.html) of the [University of Paderborn](http://www.uni-paderborn.de). For more information on the approach, please have a look at our publications.
 
 Please be aware that this is a prototypic implementation that comes with absolutely no warranty. We have successfully used the library with Oracle XE, DB2, and SQL Server. Our approach should basically work with any SQL-based database system. However, we know that this library does not work with all SQL-based databases systems because even though SQL is standardized, there are some differences in the SQL support (see Limitations and Assumptions).
 
@@ -8,6 +8,8 @@ We provide an example how to use the library in the [s2cx-example repository](ht
 -	Oracle: http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-111060-084321.html
 -	DB2: http://www-01.ibm.com/support/docview.wss?uid=swg21363866
 -	SQL Server: http://jtds.sourceforge.net
+
+The [Trove]( http://trove.starlight-systems.com/) library in the lib folder has to be added to the build path as well.
 
 ## Limitations and Assumptions:
 * The Parser only supports a subset of the SQL syntax. Hence, not all types of queries are supported by the library. For instance, to simplify the processing, we assumed that every table or column is enclosed by double quotes. Furthermore, a unique alias must be defined for every table and column reference must have the form "tablealias". "column". 
@@ -21,4 +23,4 @@ The S2CX-library uses [Trove]( http://trove.starlight-systems.com/) (licensed un
 
 ## Publications
 * Stefan Böttcher, Dennis Bokermann, Rita Hartel: _Generalizing and Improving SQL/XML Query Evaluation_. The 8th International Conference on Signal Image Technology and Internet Systems (SITIS-2012), Sorrento, Italy, November 2012.
-*  Stefan Böttcher, Dennis Bokermann, Rita Hartel: _Computing compressed XML data from relational Databases_. 28th British National Conference on Databases (BNCOD-2011). Manchester, Great Britain, July 2011.
+* Stefan Böttcher, Dennis Bokermann, Rita Hartel: _Computing compressed XML data from relational Databases_. 28th British National Conference on Databases (BNCOD-2011). Manchester, Great Britain, July 2011.
